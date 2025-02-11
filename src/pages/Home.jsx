@@ -25,7 +25,7 @@ export default function Home() {
 
     return (
         <div>
-            <Header />
+            <Header title="Products" />
             <>
                 {loadingCategories ? (
                     <p>Loading categories...</p>

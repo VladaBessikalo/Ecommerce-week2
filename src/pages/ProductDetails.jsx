@@ -1,5 +1,6 @@
 import { useParams } from 'react-router-dom';
 import { useState, useEffect } from 'react';
+import Header from '../components/Header.jsx';
 
 export default function ProductDetails() {
     const { id } = useParams();
@@ -35,11 +36,12 @@ export default function ProductDetails() {
     if (!product) return <p>Product not found.</p>;
 
     return (
-        <div className="product-details">
-            <h1>{product.title}</h1>
-
-            <img src={product.image} alt={product.title} width="200" />
-            <p>{product.description}</p>
+        <div>
+            <Header title={product.title} />
+            <div className="product-details">
+                <img src={product.image} alt={product.title} width="200" />
+                <p>{product.description}</p>
+            </div>
         </div>
     );
 }
